@@ -18,8 +18,10 @@ Purpose of Readme File : To present nice project documentation step by step
 
 3. git commit -m "Edu board file setup"
 
-4. git 
+4. git remote add origin https://github.com/muhsinashoma/edu-board.git               server file of git
+git push -u origin master 
 
+5. touch readme.md              						     to creat readme.md file in gitbash for MAC and Linux. README file is used for markdown(md) sintext
 
 ----------------------------------------------------------
 
