@@ -37,3 +37,16 @@ and this process is continued upto end
 -----------------------------------------------------------
 
 
+3rd step
+
+Packagist : The PHP Package Repository
+
+Link : https://packagist.org/
+
+1. We will create packagist account in this link https://packagist.org/. Packagist is the PHP Package Repository
+
+2. Packagist which is reausable library
+
+2. By using Package/reusable library we shall develop like facebook.com patter
+
+
