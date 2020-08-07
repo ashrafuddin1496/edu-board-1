@@ -33,7 +33,7 @@ git push -u origin master
 
 1. git add .
 
-2. git commit -m "test"
+2. git commit -m "Design is done"
 
 3. git push
 

@@ -43,7 +43,7 @@ abstract class Database{
     private function connection(){
        //PDO Connection
 
-        $connection = new PDO("mysql:host =". $this -> host."; db_name=" . $this -> db, $this -> user,  $this -> pass);
+        $connection = new PDO("mysql:host =". $this -> host."; dbname=" . $this -> db, $this -> user,  $this -> pass);
     }
 
 }
