@@ -39,13 +39,11 @@
                   return "<p class=\"alert alert-danger \">Wrong Password ! <button class=\"close\" data-dismiss=\"alert\">&times;</button></p>";
               }
 
-
              }else{
 
                  return "<p class=\"alert alert-danger \">Email or Username is incorrect ! <button class=\"close\" data-dismiss=\"alert\">&times;</button></p>";
 
              }
-
 
              //  echo "<pre>";
              //  print_r($login_user_data);                                      echo $login_user_data['name'];
@@ -55,8 +53,7 @@
              // In this case we have to use fetch(PDO :: FETCH_ASSOC) or fetch(PDO::FETCH_OBJ)
 
              // echo $data['data'] ->fetch();   For PDO Connection we will use fetch() in single data and fetchAll() in multiple data  and  For mysql fetch_arary(), fetch_assoc(), fetch_object()
-
-
+             
          }
 
 
@@ -71,7 +68,14 @@
 
          }
 
+          /**
+           * Logout System
+           */
 
+          public function userLogout(){
+              session_destroy();
+              header("location:index.php");
+          }
 
 
 
