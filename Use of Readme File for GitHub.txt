@@ -8,7 +8,7 @@ Purpose of Readme File : To present nice project documentation step by step
 2.
 
 
------------------------------------------------------------
+----------------------------------------------------------------------------
 
 1st step :
 
@@ -21,9 +21,13 @@ Purpose of Readme File : To present nice project documentation step by step
 4. git remote add origin https://github.com/muhsinashoma/edu-board.git               server file of git
 git push -u origin master 
 
-5. touch readme.md              						     to creat readme.md file in gitbash for MAC and Linux. README file is used for markdown(md) sintext
+5. touch readme.md       to creat readme.md file in gitbash for MAC and Linux. README file is used for markdown(md) sintext
+-------------------------------------------------------------------------
+6. git status            to check status
 
-----------------------------------------------------------
+7.git log --oneline      to check last commit or all commit  
+
+--------------------------------------------------------------------------
 
 2nd step :
 
@@ -34,7 +38,7 @@ git push -u origin master
 3. git push
 
 and this process is continued upto end
------------------------------------------------------------
+----------------------------------------------------------------------------
 
 
 3rd step : 
