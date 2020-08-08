@@ -51,6 +51,58 @@ abstract class Database{
     }
 
 
+    public function dataCheckPro($tbl, array $data, $condition = 'AND'){
+
+        $query_string = '';
+
+        foreach ($data as $key => $val){
+              //echo $key;
+          $query_string .= $key . "='$val' AND ";
+
+        }
+
+        $query_string;
+
+        $query_array = explode(' ', $query_string);
+        array_pop($query_array);
+        array_pop($query_array);
+
+        $final_query_string =  implode(' ', $query_array);  //echo $final_query_string;
+
+        $stmt = $this -> connection() -> prepare("SELECT * FROM $tbl WHERE $final_query_string ");
+
+        $stmt -> execute();
+
+        //echo $stmt -> rowCount();
+
+    }
+
+
+        //Update method
+        public function update($tbl,$id, array $data){
+            $query_string = '';
+            foreach ($data as $key => $val){
+
+                $query_string .= "$key = '$val' , ";
+            }
+
+        // echo $query_string;
+
+        $query_array = explode(' ', $query_string);
+        array_pop($query_array);
+        array_pop($query_array);
+
+        $final_query_string =  implode(' ', $query_array);
+
+        // echo $final_query_string;
+
+         $stmt = $this->connection() -> prepare("UPDATE $tbl SET $final_query_string WHERE id ='$id' ");
+         $stmt -> execute();
+
+        }
+
+
+
 
 }
 

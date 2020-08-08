@@ -25,6 +25,7 @@
               if(password_verify($pass,$login_user_data['pass'])){
 
                   $_SESSION['id'] = $login_user_data['id'];
+                  $_SESSION['pass'] = $login_user_data['pass'];
                   $_SESSION['role'] = $login_user_data['role'];
                   $_SESSION['name'] = $login_user_data['name'];
                   $_SESSION['uname'] = $login_user_data['uname'];
@@ -53,7 +54,7 @@
              // In this case we have to use fetch(PDO :: FETCH_ASSOC) or fetch(PDO::FETCH_OBJ)
 
              // echo $data['data'] ->fetch();   For PDO Connection we will use fetch() in single data and fetchAll() in multiple data  and  For mysql fetch_arary(), fetch_assoc(), fetch_object()
-             
+
          }
 
 
