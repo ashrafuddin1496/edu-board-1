@@ -14,13 +14,15 @@
           */
          public function userLonginSystem($email_uname, $pass){
 
-             $data = $this->emailUsernameCheck($email_uname);                   // echo 'Email and Password : '.$email_uname . $pass;   // we can access from method to capture the value. test purpose only .     // checking existing value in database for uname = muhsina or email = muhsina.akter2@gmail.com
+             $data = $this->emailUsernameCheck($email_uname);                               // echo 'Email and Password : '.$email_uname . $pass;   // we can access from method to capture the value. test purpose only .     // checking existing value in database for uname = muhsina or email = muhsina.akter2@gmail.com
 
-             $num = $data['num'];                                               // echo 'Number of Rows Data : '.$num;
+             $user_num = $data['num'];                                                     // echo 'Number of Rows Data : '.$user_num;
 
-             $login_user_data = $data['data'] ->fetch(PDO::FETCH_ASSOC);        //fetch() means by default fetch_array() but we want to get FETCH_ASSOC OR FETCH_OBJECT from PDO Class
+             $login_user_data = $data['data'] -> fetch(PDO::FETCH_ASSOC);                  //fetch() means by default fetch_array() but we want to get FETCH_ASSOC OR FETCH_OBJECT from PDO Class
 
-             if($num == 1){
+             echo $login_user_data['name'];
+
+             if($user_num == 1){
 
               if(password_verify($pass,$login_user_data['pass'])){
 
@@ -30,7 +32,7 @@
                   $_SESSION['name'] = $login_user_data['name'];
                   $_SESSION['uname'] = $login_user_data['uname'];
                   $_SESSION['email'] = $login_user_data['email'];
-                  $_SESSION['cell'] = $login_user_data['cell'];
+                  $_SESSION['cell']  = $login_user_data['cell'];
                   $_SESSION['photo'] = $login_user_data['photo'];
 
                   header('location:dashboard.php');
@@ -65,7 +67,11 @@
 
           public function  emailUsernameCheck($email_uname){
 
-             return $this -> dataCheck('users', $email_uname);         // here users is table name . dataCheck() method is used for checking existing value yes or no in database for uname = muhsina or email = muhsina.akter2@gmail.com
+             return $this -> dataCheck('users', [
+                 'email' => $email_uname,
+                 'uname' => $email_uname,
+
+             ], 'OR');         // here users is table name . dataCheck() method is used for checking existing value yes or no in database for uname = muhsina or email = muhsina.akter2@gmail.com
 
          }
 

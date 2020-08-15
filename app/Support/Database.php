@@ -30,34 +30,48 @@ abstract class Database{
 
 
     /**
-     * Data Check
+     * Data create
      */
+     public function crate(){
 
-    public function dataCheck($tbl, $data){
+     }
 
-         //  echo 'tumi okay';       //From Auth Class upto dataCheck class we can reach or not . We are checking this way.
-
-         $stmt = $this -> connection() -> prepare("SELECT * FROM $tbl WHERE email = '$data' || uname = '$data' ");
-
-         $stmt -> execute();
-
-          $num = $stmt -> rowCount();                // rowCount() is used for PDO Connection      //num_rows is used in mysql for existing row
-                                                     //echo 'Number of Row Count Data: '.$num;
-          return [
-             'num' => $num,                          //column number
-             'data' => $stmt                         //all data for a single user
-         ];
+    /**
+     * Find data by id
+     */
+    public function find($id){
 
     }
 
 
-    public function dataCheckPro($tbl, array $data, $condition = 'AND'){
+    /**
+     * Delete data by id
+     */
+
+    public function delete($id){
+
+    }
+
+    /**
+     * Data show all
+     */
+
+    public function all($tbl){
+
+    }
+
+
+    /**
+     * Existing Data Check in database for username or email
+     */
+
+    public function dataCheck($tbl, array $data, $condition = 'AND'){
 
         $query_string = '';
 
         foreach ($data as $key => $val){
               //echo $key;
-          $query_string .= $key . "='$val' AND ";
+          $query_string .= $key . "='$val' $condition ";
 
         }
 
@@ -73,7 +87,12 @@ abstract class Database{
 
         $stmt -> execute();
 
-        //echo $stmt -> rowCount();
+       echo $num = $stmt -> rowCount();
+
+       return [
+           'num' => $num,
+           'data' => $stmt,
+        ];
 
     }
 
