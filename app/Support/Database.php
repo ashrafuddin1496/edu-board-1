@@ -32,7 +32,36 @@ abstract class Database{
     /**
      * Data create
      */
-     public function crate(){
+     public function crate($table,$data){
+
+
+         // Make SQL Column form data
+         $array_key = array_keys($data);
+         $array_col = implode(',', $array_key);
+
+         // make SQL values from data
+         $array_val = array_values($data);
+
+         foreach ($array_val as $value) {
+
+             $form_value[] = "'".$value."'";
+
+         }
+
+         $array_values = implode(',', $form_value);
+
+         // Data send to table
+         $sql = "INSERT INTO $table ($array_col) VALUES ($array_values)" ;
+         $stmt = $this -> connection() -> prepare($sql);
+         $stmt -> execute();
+
+          if($stmt){
+              return true;
+          }else{
+              return false;
+          }
+
+
 
      }
 
@@ -56,7 +85,13 @@ abstract class Database{
      * Data show all
      */
 
-    public function all($tbl){
+    public function all($tbl, $order = 'DESC'){
+
+        $sql = "SELECT * FROM $tbl ORDER BY id $order ";
+        $stmt = $this ->connection() ->prepare($sql);
+        $stmt -> execute();
+        return $stmt;
+
 
     }
 

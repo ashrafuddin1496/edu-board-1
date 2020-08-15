@@ -29,7 +29,7 @@ include_once "templates/header.php";
                                             <h2>Add new user </h2>
                                             <div class="mess"></div>
                                             <hr>
-                                            <form id="add_student_form" action="" method="POST" enctype="multipart/form-data">
+                                            <form id="add_user_form" action="" method="POST" enctype="multipart/form-data">
                                                 <div class="form-group">
                                                     <label for="">Name</label>
                                                     <input class="form-control" name="name" type="text">
@@ -78,6 +78,7 @@ include_once "templates/header.php";
 
     <div class="row">
         <div class="col-sm-12">
+            <div class="mess"></div>
             <a id="add_user_btn" class="btn btn-sm btn-primary" href="#">Add new user</a>
             <br>
             <br>
@@ -96,107 +97,11 @@ include_once "templates/header.php";
                          <th>Action</th>
                      </tr>
                      </thead>
+                         <tbody id="all_users_tbody">
 
-                     <tbody>
-                     <tr>
-                         <td>1</td>
-                         <td>Muhsina Akter</td>
-                         <td>muhsina.akter2@gmail.com</td>
-                         <td>01715022945</td>
-                         <td>admin</td>
-                         <td><img style="width: 50px; height: 50px" src="images/a4.png" alt=""></td>
-                         <td>Active</td>
-                         <td>
-                             <a class="btn btn-sm btn-info" href="#">View</a>
-                             <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>1</td>
-                         <td>Muhsina Akter</td>
-                         <td>muhsina.akter2@gmail.com</td>
-                         <td>01715022945</td>
-                         <td>admin</td>
-                         <td><img style="width: 50px; height: 50px" src="images/a4.png" alt=""></td>
-                         <td>Active</td>
-                         <td>
-                             <a class="btn btn-sm btn-info" href="#">View</a>
-                             <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>1</td>
-                         <td>Muhsina Akter</td>
-                         <td>muhsina.akter2@gmail.com</td>
-                         <td>01715022945</td>
-                         <td>admin</td>
-                         <td><img style="width: 50px; height: 50px" src="images/a4.png" alt=""></td>
-                         <td>Active</td>
-                         <td>
-                             <a class="btn btn-sm btn-info" href="#">View</a>
-                             <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>1</td>
-                         <td>Muhsina Akter</td>
-                         <td>muhsina.akter2@gmail.com</td>
-                         <td>01715022945</td>
-                         <td>admin</td>
-                         <td><img style="width: 50px; height: 50px" src="images/a4.png" alt=""></td>
-                         <td>Active</td>
-                         <td>
-                             <a class="btn btn-sm btn-info" href="#">View</a>
-                             <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>1</td>
-                         <td>Muhsina Akter</td>
-                         <td>muhsina.akter2@gmail.com</td>
-                         <td>01715022945</td>
-                         <td>admin</td>
-                         <td><img style="width: 50px; height: 50px" src="images/a4.png" alt=""></td>
-                         <td>Active</td>
-                         <td>
-                             <a class="btn btn-sm btn-info" href="#">View</a>
-                             <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>1</td>
-                         <td>Muhsina Akter</td>
-                         <td>muhsina.akter2@gmail.com</td>
-                         <td>01715022945</td>
-                         <td>admin</td>
-                         <td><img style="width: 50px; height: 50px" src="images/a4.png" alt=""></td>
-                         <td>Active</td>
-                         <td>
-                             <a class="btn btn-sm btn-info" href="#">View</a>
-                             <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                         </td>
-                     </tr>
-                     <tr>
-                         <td>1</td>
-                         <td>Muhsina Akter</td>
-                         <td>muhsina.akter2@gmail.com</td>
-                         <td>01715022945</td>
-                         <td>admin</td>
-                         <td><img style="width: 50px; height: 50px" src="images/a4.png" alt=""></td>
-                         <td>Active</td>
-                         <td>
-                             <a class="btn btn-sm btn-info" href="#">View</a>
-                             <a class="btn btn-sm btn-warning" href="#">Edit</a>
-                             <a class="btn btn-sm btn-danger" href="#">Delete</a>
-                         </td>
-                     </tr>
-                     </tbody>
+
+
+                         </tbody>
                  </table>
 
 

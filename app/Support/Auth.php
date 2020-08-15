@@ -9,6 +9,15 @@
 
      class Auth extends Database {
 
+
+         // Testing purpose
+
+//         public function amni(){
+//             echo "Test Done";
+//         }
+
+
+
          /**
           * Login Management System
           */

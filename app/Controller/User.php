@@ -9,6 +9,31 @@
 
     class User extends Database{
 
+        /**
+         * User Add
+         */
+
+        public function createUser($data){
+
+           $data =  $this -> crate('users',[
+                'name'  => $data['name'],
+                'uname' => $data['uname'],
+                'pass'  => password_hash('login', PASSWORD_DEFAULT),
+                'email' => $data['email'],
+                'cell'  => $data['cell'],
+                'role'  => $data['role'],
+            ]);
+
+            if($data){
+
+                return "<p class=\"alert alert-success \"> User created successfully ! <button class=\"close\" data-dismiss=\"alert\">&times;</button></p>";
+            }
+
+
+
+    }
+
+
         public function passwordChange($user_id, $new_pass){
 
                  $this -> update('users', $user_id, [
@@ -22,6 +47,14 @@
                  return "<p class=\"alert alert-success \"> Password has been changed successfully ! <button class=\"close\" data-dismiss=\"alert\">&times;</button></p>";
 
         }
+
+
+
+        public function allUser(){
+           $data = $this -> all('users');
+           return $data;
+        }
+
 
         //public function checkOldPass($old_pass,$user_id){
 
